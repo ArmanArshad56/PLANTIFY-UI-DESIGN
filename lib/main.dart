@@ -1,4 +1,6 @@
 // main.dart
+// ignore_for_file: deprecated_member_use
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -148,8 +150,12 @@ class BrandRow extends StatelessWidget {
         ),
         const SizedBox(width: 10),
         const Text(
-          'CONTENTCERTAIN',
-          style: TextStyle(fontWeight: FontWeight.w800, letterSpacing: 1.3),
+          'PLANTIFY',
+          style: TextStyle(
+            fontWeight: FontWeight.w800,
+            letterSpacing: 1.2,
+            fontSize: 18,
+          ),
         ),
       ],
     );
@@ -203,6 +209,7 @@ class GradientScaffold extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       // Subtle decorative gradient + soft blobs
       body: Container(
         width: double.infinity,
