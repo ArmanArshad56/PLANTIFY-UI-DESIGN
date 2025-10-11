@@ -6,9 +6,9 @@ import 'package:flutter/material.dart';
 
 void main() => runApp(const MyApp());
 
-/// ------------------------------------------------------------
-/// THEME: Cool Blues + Grass Green + Soft Purple (Material 3)
-/// ------------------------------------------------------------
+// ------------------------------------------------------------
+// THEME: Cool Blues + Grass Green + Soft Purple (Material 3)
+// ------------------------------------------------------------
 const _brandBlue = Color(0xFF2563EB); // primary blue
 const _grassGreen = Color(0xFF10B981); // grass green
 const _softPurple = Color(0xFF7C3AED); // accent purple
@@ -108,7 +108,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'ContentCertain',
+      title: 'Content',
       debugShowCheckedModeBanner: false,
       theme: _buildTheme(),
       home: const LoginScreen(),
@@ -380,8 +380,14 @@ class _LoginScreenState extends State<LoginScreen> {
                     onPressed: () {
                       if (_formKey.currentState?.validate() ?? false) {
                         // TODO: Do login
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          const SnackBar(content: Text('Logging in...')),
+                        // ScaffoldMessenger.of(context).showSnackBar(
+                        //   const SnackBar(content: Text('Logging in...')),
+                        // );
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => MyHomeScreen(),
+                          ),
                         );
                       }
                     },
@@ -520,8 +526,13 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     onPressed: () {
                       if (_formKey.currentState?.validate() ?? false) {
                         // TODO: Do signup
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          const SnackBar(content: Text('Creating account...')),
+                        // ScaffoldMessenger.of(context).showSnackBar(
+                        //   const SnackBar(content: Text('Creating account...')),
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => MyHomeScreen(),
+                          ),
                         );
                       }
                     },
@@ -579,6 +590,44 @@ class _InlineLink extends StatelessWidget {
             ),
           ),
         ],
+      ),
+    );
+  }
+}
+
+/// ------------------------------------------------------------
+/// HOME SCREEN
+/// ------------------------------------------------------------
+
+class MyHomeScreen extends StatefulWidget {
+  const MyHomeScreen({super.key});
+
+  @override
+  State<MyHomeScreen> createState() => _MyHomeScreen();
+}
+
+class _MyHomeScreen extends State<MyHomeScreen> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text('Home')),
+      body: Center(
+        child: Container(
+          width: 350,
+          height: 250,
+          color: Colors.grey,
+          child: Center(
+            child: Text(
+              'HELLO ARMAN',
+              style: TextStyle(
+                fontSize: 25,
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+                backgroundColor: Colors.blueGrey,
+              ),
+            ),
+          ),
+        ),
       ),
     );
   }
