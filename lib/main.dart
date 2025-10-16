@@ -1,7 +1,10 @@
 // main.dart
-// ignore_for_file: deprecated_member_use
+// ignore_for_file: deprecated_member_use, sized_box_for_whitespace
 
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(const MyApp());
@@ -599,34 +602,100 @@ class _InlineLink extends StatelessWidget {
 /// HOME SCREEN
 /// ------------------------------------------------------------
 
+// class MyHomeScreen extends StatefulWidget {
+//   const MyHomeScreen({super.key});
+
+//   @override
+//   State<MyHomeScreen> createState() => _MyHomeScreen();
+// }
+
+// class _MyHomeScreen extends State<MyHomeScreen> {
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(title: Text('Home')),
+//       body: Center(
+//         child: Container(
+//           width: 250,
+//           height: 150,
+//           color: Colors.grey,
+//           child: Center(
+//             child: ElevatedButton(
+//               onPressed: () {
+//                 if (kDebugMode) {
+//                   print('button pressed');
+//                 }
+//               },
+//               child: const Text(
+//                 'click here',
+//                 style: TextStyle(
+//                   fontSize: 25,
+//                   color: Colors.white,
+//                   fontWeight: FontWeight.bold,
+//                   // backgroundColor: Colors.white,
+//                 ),
+//               ),
+//             ),
+
+//             child: Container(
+//               width: 150,
+//               height: 150,
+//               child: Image.asset('assets/images/app_icn(1).png'),
+//             ),
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }
+
 class MyHomeScreen extends StatefulWidget {
   const MyHomeScreen({super.key});
 
   @override
-  State<MyHomeScreen> createState() => _MyHomeScreen();
+  State<MyHomeScreen> createState() => _MyHomeScreenState();
 }
 
-class _MyHomeScreen extends State<MyHomeScreen> {
+class _MyHomeScreenState extends State<MyHomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Home')),
-      body: Center(
-        child: Container(
-          width: 350,
-          height: 250,
-          color: Colors.grey,
-          child: Center(
-            child: Text(
-              'HELLO ARMAN',
-              style: TextStyle(
-                fontSize: 25,
-                color: Colors.white,
-                fontWeight: FontWeight.bold,
-                backgroundColor: Colors.blueGrey,
+      appBar: AppBar(
+        title: const Text('Home'),
+        foregroundColor: Colors.white,
+        backgroundColor: _grassGreen,
+      ),
+      body: Container(
+        height: 300,
+        width: 300,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Text('R1', style: TextStyle(fontSize: 25)),
+            SizedBox(height: 16),
+            Text('R2', style: TextStyle(fontSize: 25)),
+            SizedBox(height: 16),
+            Text('R3', style: TextStyle(fontSize: 25)),
+            SizedBox(height: 16),
+            ElevatedButton(
+              onPressed: () {
+                if (kDebugMode) {
+                  print('button pressed');
+                }
+              },
+              child: const Text(
+                'click here',
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
               ),
             ),
-          ),
+            const SizedBox(height: 16),
+            SizedBox(
+              width: 50,
+              height: 50,
+              child: Image.asset('assets/images/app_icn.png'),
+            ),
+          ],
         ),
       ),
     );
