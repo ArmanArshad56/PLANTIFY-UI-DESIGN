@@ -667,10 +667,9 @@ class _MyHomeScreenState extends State<MyHomeScreen> {
       ),
       body: Container(
         height: 300,
-        width: 300,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Text('R1', style: TextStyle(fontSize: 25)),
             SizedBox(height: 16),
